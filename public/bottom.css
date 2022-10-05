@@ -1,0 +1,42 @@
+.gallery-main-container{
+display: grid;
+margin: 0 100px;
+margin-top: 100px;
+height: auto;
+grid-template-rows:1fr 1fr;
+grid-template-columns: 1fr 0.7fr;
+grid-template-areas: 
+"bytheme-heading bytheme-image"
+"bytheme-heading bytheme-content";
+}
+
+#bytheme-heading{
+grid-area: bytheme-heading;
+height: auto ;
+width: 70%;
+padding: 30px;
+margin: 30px;
+border-radius: 20px;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+background-image: url(./Imgs/acrylic-image-1.jpg);
+background-size: cover;
+background-position: center;
+}
+
+#bytheme-image{
+  grid-area: bytheme-image; 
+}
+#bytheme-image img {
+  height: 100%;
+width: 100%;
+
+border-radius: 20px;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#bytheme-content{
+  grid-area: bytheme-content;
+  background-color: orange;
+  border-radius: 15px;
+  padding: 30px;
+  height: auto;
+}

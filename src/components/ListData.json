@@ -1,0 +1,42 @@
+[{
+    "id": 1,
+    "text": "Oil Painting",
+    "linkUrl" :  "/gallery/oil-painting"
+}, {
+    "id": 2,
+    "text": "Charcoal Painting",
+    "linkUrl": "/gallery/charcoal-painting"
+
+}, {
+    "id": 3,
+    "text": "Water Colour Painting",
+    "linkUrl": "/gallery/watercolor-painting"
+}, {
+    "id": 4,
+    "text": "Pensil Sketch",
+    "linkUrl": "/gallery/pencil-painting"
+}, {
+    "id": 5,
+    "text": "Family Painting",
+    "linkUrl":"/category"
+}, {
+    "id": 6,
+    "text": "Pet Painting",
+    "linkUrl":"/category"
+}, {
+    "id": 7,
+    "text": "Couple Painting",
+    "linkUrl":"/category"
+}, {
+    "id": 8,
+    "text": "Pastel Drwaing",
+    "linkUrl": "/product/pastel"
+}, {
+    "id": 9,
+    "text": "Kid Painting",
+    "linkUrl":"/category"
+}, {
+    "id": 10,
+    "text": "Acrylic Painting",
+    "linkUrl":"/gallery/acrylic-painting"
+}] 

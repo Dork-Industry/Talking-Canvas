@@ -1,0 +1,41 @@
+.checkout-container{
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.3fr 1fr;
+    grid-template-areas: "coupon coupon"
+    "user-detail product-detail";
+}
+#coupon{
+    width: 100%;
+    grid-area: coupon;
+}
+#user-detail{
+    grid-area: user-detail;
+}
+#product-detail{
+    grid-area: product-detail;
+}
+.coupon{
+ 
+    border: dashed red 2px;
+  
+}
+.product-detail{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 30px;
+    /* margin:30px 20px 0 0; */
+    border-radius: 20px;
+}
+@media only screen and (max-width: 700px) {
+    .checkout-container{
+     grid-template-columns: 1fr;
+     grid-template-rows: 0.3fr  1fr 1fr ;
+     grid-template-areas: 
+     /* "heading-price" */
+     "coupon"
+     "user-detail"
+     "product-detail";
+    }
+}

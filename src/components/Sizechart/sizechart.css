@@ -1,0 +1,10 @@
+.size-chart-container{
+    display: grid;
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "size-chart"
+}
+#size-chart-heaing{
+    grid-area: size-chart;
+}

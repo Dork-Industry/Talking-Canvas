@@ -1,0 +1,93 @@
+[
+    {
+        "id": 1,
+        "title" : "Oil Painting Gallery",
+        "card1" : "./image/gallery-page/oil-image-1-1.jpg",
+        "alt1": "",
+        "card2" : "./image/gallery-page/oil-image-2.jpg",
+        "alt2": "",
+        "description": "100% Handmade Oil Portrait painted on a Canvas.",
+        "recommended": "Compilation Portraits, Christmas Paintings, Royal Portraits, Pet Portraits.",
+        "finishing": "Rolled, Framed, Gallery Wrapped.",
+        "link": "/gallery/oil-painting"
+    
+    },
+    {
+        "id": 2,
+        "title" : "Charcoal Drawing From Photo ",
+        "card1" : "./image/gallery-page/charcoal-image-1-1.jpg",
+        "alt1": "",
+        "card2" : "./image/gallery-page/charcoal-image-2.jpg",
+        "alt2": "",
+        "description": "100% Handmade Charcoal Drawing sketched on Premium Paper.",
+        "recommended": "Memorial Portraits, Pet Portraits, Black and White Portraits.",
+        "finishing": "Rolled.",
+        "link": "/gallery/charcoal-painting"
+    
+    },
+    {
+        "id": 3,
+        "title" : "Watercolor Painting From Photo ",
+        "card1" : "./image/gallery-page/watercolor-image-1.jpg",
+        "alt1": "",
+        "card2" : "./image/gallery-page/watercolor-image-2.jpg",
+        "alt2": "",
+        "description": "100% Handmade Watercolor Painting painted on Premium & Highly-Absorbent Paper.",
+        "recommended": "Landscape Paintings, Scenery Paintings, Blur Photo to Portraits.",
+        "finishing": " Rolled, Framed.",
+        "link": "/gallery/watercolor-painting"
+    
+    },
+    {
+        "id": 4,
+        "title" : "Colored Pensil Drawing From Photo ",
+        "card1" : "./image/gallery-page/colored-pencil-image-1.jpg",
+        "alt1": "",
+        "card2" : "./image/gallery-page/colored-pencil-image-2.jpg",
+        "alt2": "",
+        "description": "100% Hand-drawn Colored Pencil Drawing sketched on Premium Paper with Industry-leading pencils.",
+        "recommended": " Child Portraits, Compilation Portraits, Horse Portraits.",
+        "finishing": " Rolled, Framed.",
+        "link": "/gallery/colored-pencil-painting"
+    
+    },
+    {
+        "id": 5,
+        "title" : "Pensil Sketch From Photo ",
+        "card1" : "./image/gallery-page/pencil-image-1.jpg",
+        "alt1": "",
+        "card2" : "./image/gallery-page/pencil-image-2.jpg",
+        "alt2": "",
+        "description": "100% Handmade Pencil Sketch drawn on High-quality Paper with industry-leading pencils.",
+        "recommended": " Memorial Portraits, Pet Portraits, Monochrome Portraits, Compilation Portraits.",
+        "finishing": " Rolled",
+        "link": "/gallery/pencil-painting"
+    
+    },
+    {
+        "id": 6,
+        "title" : "Acrylic Painting From Photo ",
+        "card1" : "./image/gallery-page/acrylic-image-1.jpg",
+        "alt1": "",
+        "card2" : "./image/gallery-page/acrylic-image-2.jpg",
+        "alt2": "",
+        "description": "100% Handmade Acrylic Paintings painted on a Canvas.",
+        "recommended": "Christmas Paintings, Family Portraits, Merged Portraits, Couple Portraits, Baby Portraits.",
+        "finishing": "Rolled, Framed, Gallery Wrapped.",
+        "link": "/gallery/acrylic-painting"
+    
+    },
+    {
+        "id": 7,
+        "title" : "Pastel Painting From Photo ",
+        "card1" : "./image/gallery-page/pastel-image-1.jpg",
+        "alt1": "",
+        "card2" : "./image/gallery-page/pastel-image-2.jpg",
+        "alt2": "",
+        "description": "100% Handmade Pastel Portraits painted on a Premium Textured Paper.",
+        "recommended": " Couple Portraits, Child Portraits, Car Portraits, Landscape Portraits.",
+        "finishing": "Rolled, Framed.",
+        "link": "/gallery/pastel-painting"
+   
+    }
+]

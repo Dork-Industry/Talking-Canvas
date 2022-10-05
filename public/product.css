@@ -1,0 +1,23 @@
+
+.product-small .digi-custom-product-box-inner:hover {
+    border: 0px!important;
+}
+.product-small .digi-box-selected:hover {
+    border: 4px solid #f05d2f!important;
+}
+.product-small .digi-funnel-product-name span, .product-small .digi-funnel-product-name a {
+     color: #000!important
+}
+.product-small .digi-box-selected .digi-funnel-product-name span, .product-small .digi-box-selected .digi-funnel-product-name a {
+     color: #fff!important
+}
+.product-small:hover .digi-product-text-box-funnel {
+     background-color: #fff!important
+}
+.digi-box-selected:hover .digi-product-text-box-funnel {
+    background-color: #f05d2f!important;
+}
+/* header styling*/
+.header-wrapper .nav-right {
+    width: 140px
+}

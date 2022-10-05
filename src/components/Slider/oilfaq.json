@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1 ,
+        "question" : "1. What is the price of an oil portrait? How do I compute the price for my order?",
+        "answer" : "Our starting price for oil portraits is $130; this is for one character in a size of 12 inches x 12 inches.To compute the price for your Custom Oil Portrait, all you need to do is create your custom order from the Order Now button or get an estimate from the above images."
+    },
+    {
+        "id": 2 ,
+        "question" : "2. How much do I have to pay in advance?",
+        "answer" : "You only have to pay 30% of your order value to get the painting process started.Once the down payment is paid, the painting process begins, and after some days, the photo of your final painting is shared with you for changes. At this point, you can suggest changes or pay the second half of your bill, and the shipping process starts."
+    },
+    {
+        "id": 3 ,
+        "question" : "3. How much do I have to pay for framing or gallery wrapping my portrait?",
+        "answer" : "The Framing or Gallery Wrapping cost depends upon the size of the portrait selected.To get the exact cost, create your custom order from the order now button, and you will be shown the exact price on the checkout page."
+    },
+    {
+        "id": 4 ,
+        "question" : "4. How much do I have to pay for shipping? Does it vary with size?",
+        "answer" : "We do not charge anything for our Free Shipping order; a Free Shipping order reaches you in 25-27 business days.We charge 20% of your cart value for Express Shipping orders; these reach you 16-18 business days."
+    }
+]

@@ -1,0 +1,223 @@
+.oil--painting--container{
+height: 35rem;
+}
+.oil--painting--heading h1{
+    font-size: 3rem;
+}
+
+.oil--painting--gallery--image{
+    margin: 30px auto;
+    height:80% ;
+    width: 89%;
+}
+.oil--painting--gallery--image img{
+ 
+    width: 100%;
+}
+.oil--painting--btn--container{
+    margin: 20px 20px;
+    padding:10px;
+    background: orangered;
+}
+.oil--painting--btn--container a{
+   text-decoration: none;
+}
+
+.portrait-btn{
+    background: orangered;
+    padding: 10px 30px ;
+    font-size: 20px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+
+.btn-container a{
+    text-decoration: none;
+    color: white;
+}
+.oil-painting-text{
+   margin: 50px 100px;
+    padding: 30px;
+    font-size: 20px;
+}
+.text-bold{
+    font-weight: bold;
+    
+}
+.video-testimonial-grid-container{
+    margin: 20px 100px ;
+    height: 400px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+   
+}
+.video--testimonial {
+    height: 100%;
+    width: 100%;
+    
+}
+.multiple--img-container{
+    margin: 50px;
+    
+}
+.multiple--img-grid-container{
+    margin-right: 20px 100px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+    
+    
+}
+.multiple--img img{
+    height: 100%;
+    width: 100%;
+}
+@media(max-width:768px){
+    .oil-painting-text p{
+        font-size: 0.8rem;
+    }
+    .oil--painting--heading h1{
+        font-size: 2rem;
+    }
+    .oil--painting--container{
+        height: 40vh;
+    }
+    /* .oil--painting--gallery--image{
+       
+        height:50% ;
+    
+    } */
+    .video-testimonial-grid-container{
+        margin: 20px auto ;
+        height: 500px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .video--testimonial {
+        height: 100%;
+        width: 100%;
+    }
+    .multiple--img-grid-container{
+       
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+        
+        
+    }
+    .multiple--img img{
+        height: 100%;
+        width: 100%;
+    }
+    .multiple--img-container{
+        margin: 0px;
+        
+    }
+    .oil-painting-text{
+        margin: 50px 0px;
+         padding: 30px;
+         font-size: 17px;
+     }
+     .oil-painting-text p{
+        margin-top: 10px;
+     }
+}
+
+
+/* ------- Gallery Main page ------ */
+
+
+.gallery--page--heading{
+    font-size: 20px;
+}
+
+.container--gallery{
+    display: grid;
+    height: auto;
+    margin:0 7%;
+    grid-template-columns: 0.8fr 1fr;
+    grid-template-rows: 0.6fr 0.6fr;
+    grid-template-areas: "first--card second--card"
+    "first--card third--card";
+}
+
+.first--card{
+    grid-area: first--card;
+    margin: 15px;
+    position: relative;   
+}
+.centered {
+    position: absolute;
+    top: 80%;
+    left: 60%;
+    transform: translate(-90%, -90%);
+    color: white;
+    font-size: 25px;
+  }
+
+.second--card{
+    grid-area: second--card;
+    margin: 15px;
+}
+
+.third--card{
+    grid-area: third--card;
+    margin: 15px;
+}
+.first--card img{
+    height: 100%;
+    width: 100%;
+  
+}
+.second--card img{
+    height: 100%;
+    width: 100%; 
+}
+
+.card--text--body{
+    font-size: 17px;
+    padding: 10px 20px;  
+}
+
+.card--text--body .text--bold{
+    font-weight: bolder;
+}
+
+.third--card{
+    background-color: orange;
+    color: white;
+}
+.h-rule{
+    margin : 0 20%;
+    background-color: #fff;
+        border-top: 8px dotted #8c8b8b;
+}
+
+@media(max-width:768px){
+    .container--gallery{
+        margin: 0 5%;
+        grid-template-columns:  1fr;
+        grid-template-rows:1.5fr 0.5fr 0.5fr;
+        grid-template-areas: "first--card"
+        "second--card"
+        "third--card";
+    }
+    .gallery--page--heading h1{
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    .gallery--page--heading p{
+        font-size: 0.8rem;
+        font-weight: 500;
+        padding-top: 10px;
+    }
+    .third--card p{
+        font-size: 0.8rem;
+    }
+
+}

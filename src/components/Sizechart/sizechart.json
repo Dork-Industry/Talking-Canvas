@@ -1,0 +1,76 @@
+[
+    {
+        "id" : 1 ,
+        "heading" : "Small Canvas Sizes",
+        "size" : " 12\" x 12\" ",
+        "paragraph" : "This canvas size comes under Semi-Medium Portrait Paintings.",
+        "paragraph2" : "It is ideal for One character portraits and can be of great placement on Tabletops and Mantel Pieces.",
+        "image" : "./image/size-chart/12x12-v1.jpg",
+        "alt" : ""
+    },
+    {
+        "id" : 2 ,
+        "size" : " 12\" x 16\" ",
+        "paragraph" : "This canvas size comes under Medium Portrait Paintings. ",
+        "paragraph2" : "It is ideal for Two-character paintings and looks best hung in Transition Spaces or Foyer.This is also one of our most popular sizes.",
+        "image" : "./image/size-chart/12x16-v1.jpg",
+        "alt" : ""
+    },
+    {
+        "id" : 4 ,
+        "size" : " 16\" x 20\" ",
+        "paragraph" : "This canvas size comes under Medium Paintings. ",
+        "paragraph2" : "It is ideal if you are looking to include Three subjects in your painting. It can be placed in the Kitchen or your Home Office.This is also one of our most popular sizes.",
+        "image" : "./image/size-chart/16x20-v1.jpg",
+        "alt" : ""
+    },
+    {
+        "id" : 5 ,
+        "heading" : "Medium Canvas Sizes",
+        "size" : " 18\" x 24\" ",
+        "paragraph" : "This portrait canvas size comes under Semi-Large Paintings.",
+        "paragraph2" : "It is a perfect size for painting Four characters and can ideally be placed in the Dining Room or hung in your Guest Room.",
+        "image" : "./image/size-chart/18x24-v1.jpg",
+        "alt" : ""
+    },
+    {
+        "id" : 6 ,
+        "size" : " 20\" x 30\" ",
+        "paragraph" : "This is a Large Portrait canvas size.If you are looking to paint Five characters, this would be the recommended size. It looks perfect hung in the bedroom or Kid’s room.",
+        "image" : "./image/size-chart/20x30-v1.jpg",
+        "alt" : ""
+    },
+    {
+        "id" : 7 ,
+        "size" : " 24\" x 36\" ",
+        "paragraph" : "This is a Large Portrait canvas size.If you are looking to paint Five characters, this would be the recommended size. It looks perfect hung in the bedroom or Kid’s room.",
+        "image" : "./image/size-chart/24x36-v1.jpg",
+        "alt" : ""
+        
+    },
+    {
+        "id" : 8 ,
+        "heading" : "Large Canvas Sizes",
+        "size" : " 30\" x 40\" ",
+        "paragraph" : "This Large Canvas Size is ideal for Paintings that have Seven to Nine characters. Most of our customers who want to paint a family portrait go for this size.",
+        "paragraph2" : "Ideal placement for canvas portraits this size is the Living Room.",
+        "image" : "./image/size-chart/30x40-v1.jpg",
+        "alt" : ""
+    },
+    {
+        "id" : 9 ,
+        "size" : " 36\" x 48\" ",
+        "paragraph" : "This canvas size comes under Huge Portrait Paintings.",
+        "paragraph2" : "It can include up to Ten characters and looks great in Living Room or Big Office Spaces.",
+        "image" : "./image/size-chart/36x48-v1.jpg",
+        "alt" : ""
+    },
+    {
+        "id" : 10 ,
+        "size" : " 48\" x 72\" ",
+        "paragraph" : "This is a Huge Portrait Size that can be opted for if you want a painting of Ten or more characters.",
+        "paragraph2" : "It is ideal for Master Bedrooms, Big Living Rooms, or Huge Office Spaces.",
+        "image" : "./image/size-chart/48x72-v1.jpg",
+        "alt" : ""
+    }    
+]

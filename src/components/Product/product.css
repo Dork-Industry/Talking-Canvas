@@ -1,0 +1,103 @@
+.pro-container{
+    display: grid;
+    margin: 0 10px;
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr ;
+    grid-template-areas: "pro-slider pro-info";
+}
+#pro-slider{
+    grid-area: pro-slider;
+
+}
+.pro-slider{
+    padding-top: 120px;
+}
+#pro-info{
+    grid-area: pro-info;
+}
+.pro-heading{
+    padding-top: 50px;
+    font-size: 2.5rem;
+}
+.info-card{
+    margin-top: 40px;
+    border-radius: 20px;
+    box-shadow: 2px 4px 12px rgb(0 0 0 / 20%);
+}
+.product-input{
+    padding: 20px;
+    margin: 20px;
+    color: red;
+ }
+.info-card-heading p{
+padding:0 20px 10px 20px;
+}
+.info-card h3{
+font-size: 1.4rem;
+font-weight: 700;
+padding: 20px;
+}
+.info-card .price{
+    padding: 0 20px;
+    letter-spacing: 3px;
+    font-weight: 500;
+}
+.select-container .file {
+    width: 80%;
+}
+.select-container{
+    text-align: left;
+    height: auto;
+}
+.select-container p{
+    padding: 0;
+    width: auto;
+}
+.bx-cart {
+    position: relative;
+    /* Adjust these values accordingly */
+    top: 5px;
+    font-size: 22px;  
+  }
+  .bx-purchase-tag{
+    position: relative;
+    /* Adjust these values accordingly */
+    top: 5px;
+    font-size: 20px;  
+  }
+  .cart--button{
+    margin-right: 15px;
+  }
+  .inches{
+    font-size: 12px;
+  }
+  .form-control--character{
+    margin-left: 8px;
+    
+  }
+  .form-control--size{
+    margin-left: 14px;
+    
+  }
+
+@media only screen and (max-width: 700px){
+    .pro-container{
+        grid-template-columns: 1fr;
+      
+        grid-template-rows: 0.5fr 0.5fr ;
+        grid-template-areas: "pro-slider"
+        "pro-info";
+       
+    }
+    .pro-heading{
+        font-size: 1.8rem;
+    }
+    .pro-slider{
+        padding-top: 20px;
+    }
+    .cart--button{
+        margin-bottom: 15px;
+        margin-left:20px;
+      }
+}

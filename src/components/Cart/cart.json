@@ -1,0 +1,29 @@
+[
+    {
+       "id" : 1,
+       "image" : "./Imgs/book-1.png",
+       "category" : "Couple portraits",
+       "medium" : "Oil Painting",
+       "size" :  "12\" x 12\"",
+       "character" : 2 ,
+       "Price" : "₹ 230"
+    },
+    {
+        "id" : 2,
+        "image" : "./Imgs/book-2.png",
+        "category" : "Pet portraits",
+        "medium" : "Pastel Painting",
+        "size" :  "16\" x 20\"",
+        "character" : 1 ,
+        "Price" : "₹ 130"
+     },
+     {
+        "id" : 3,
+        "image" : "./Imgs/book-3.png",
+        "category" : "Family portraits",
+        "medium" : "Oil Painting",
+        "size" :  "16\" x 20\"",
+        "character" : 4 ,
+        "Price" : "₹ 130"
+     }
+]

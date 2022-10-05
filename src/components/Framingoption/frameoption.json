@@ -1,0 +1,17 @@
+[
+    {
+        "id" : 1,
+        "title" : "Rolled",
+        "description" : "Your painting will be rolled in an Art Tube so that it is well protected during delivery. Rolled paintings can be framed and hung whenever you or your loved ones wish to. There are no extra charges for this finishing option."
+    },
+    {
+        "id" : 2,
+        "title" : "Gallery Wrapped",
+        "description" : "The canvas of your artwork will be stretched across a stretcher bar and secured on the back of a frame. Portraits with an invisible frame add depth to the painting and attract the viewer. Charges may vary according to the size."
+    },
+     {
+           "id" : 3,
+            "title" : "Framed",
+            "description" : "Your art piece will be securely framed and will be ready to decorate the walls once delivered. Increase the longevity of your portrait by getting it framed. You can select any one design from the above 6 Premium Designs while placing the order. There are extra charges based on the size.Available in Mediums: Oil, Acrylic, Colored Pencil, Watercolor, and Pastels."
+    }
+]

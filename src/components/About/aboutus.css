@@ -1,0 +1,29 @@
+.about--container{
+    display: grid ;
+    height: auto;
+    grid-template-columns: 1fr 0.7fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "about--description about--image";
+}
+
+.about--description{
+    grid-area: about--description;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+    margin : 20px;
+    padding: 20px;
+}
+
+.about--image{
+    grid-area: about--image;  
+}
+
+@media only screen and (max-width: 900px) {
+    .about--container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1fr;
+        grid-template-areas: 
+        "about--image"
+        "about--description";
+    }
+}
