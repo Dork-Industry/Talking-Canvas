@@ -37,7 +37,6 @@ function Checkout() {
 
   const handlecoupon = (e) => {
     e.preventDefault();
-    console.log("Button is clicked")
     const finding = coupon.find(item => (
       item.name === couponcode
     )
@@ -57,9 +56,7 @@ function Checkout() {
   })
   const [offer, setOffer] = useState(0)
   const gstAmt = amt * 0.18;
-  let total = Math.ceil((amt * 1) + (gstAmt * 1) - (offer))
-
-  console.log(coupon, offer, couponcode);
+  const total = Math.ceil((amt * 1) + (gstAmt * 1) - (offer))
   return (
     <div>
       <div className='checkout-heading container text-center fs-3 my-5 pt-5' >

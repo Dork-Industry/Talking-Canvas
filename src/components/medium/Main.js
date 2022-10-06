@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import Searchbar from '../Searchbar';
 import data from "./medium.json";
 import {useDispatch} from "react-redux";
 import "./medium.css";
 import {Link} from "react-router-dom";
+import {client,urlFor} from "../../sanity"
 function Main() {
     const [medium, setMedium] = useState("");
     const [selected, setSelected] = useState(false);
@@ -17,7 +18,22 @@ function Main() {
 
     setSelected(true);
     }
-
+    const [data, setData] = useState([])
+  const getData = async() => {
+    const query = `*[_type=="medium"]{
+      _id,
+      title,
+      image,
+      alt,
+      description,
+      link,
+    }`;
+    const posts = await client.fetch(query);
+    setData(posts)
+  }
+    useEffect(() => {
+        getData()
+      }, []);
     return (
         <div>
             
@@ -36,18 +52,18 @@ function Main() {
     {data.map(data => {
         return (
             
-            <div className=' col-lg-3 col-md-4 col-sm-4 col-6' key={data.id}><center>
+            <div className=' col-lg-3 col-md-4 col-sm-4 col-6' key={data._id}><center>
             <div className=' category-container'>
             <div className=''>
         <div className="card">
 
 <div className="image">
-   <img src={data.image} alt={data.alt}/>
+   <img src={urlFor(data.image).url()} alt={data.alt}/>
 </div>
 <div className="des">
  <p>{data.title}</p>
  <div>
- <Link to={data.linkUrl}><button className='px-3' value={data.title} onClick={handleClick}>Select</button></Link>
+ <Link to={data.link}><button className='px-3' value={data.title} onClick={handleClick}>Select</button></Link>
  </div>
 
 
