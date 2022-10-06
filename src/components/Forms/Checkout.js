@@ -1,14 +1,31 @@
-import React, {useEffect} from 'react';
+import React, {useEffect,useState} from 'react';
 import  {useSelector} from "react-redux"
 import { useLocation } from 'react-router-dom';
 import "./checkout.css";
+import {client} from "../../sanity"
 function Checkout() {
+  const {category, medium} = useSelector((state) => ({...state}));
   const location = useLocation();
   const {size,char,data} = location.state
-  let {category, medium} = useSelector((state) => ({...state}));
+  const [price, setPrice] = useState([])
+  const [formdata,setFormData] = useState({name:"",email:"",phone:"",address:"",city:"",country:"",zip:"",other:""})
+  const getData = async() => {
+    const query = `*[_type=="price" && theme=='${category}' && medium=='${medium}' && size=='${size}' ]{
+      price,
+      _id
+}`;
+    const posts = await client.fetch(query);
+    setPrice(posts)
+  }
   useEffect(() => {
-    window.scrollTo(0, 0)
+        getData()
+        window.scrollTo(0, 0)
   }, []);
+  const amt = price.map((item) => {
+    return item.price
+  })
+  const gstAmt = amt * 0.18;
+  const total = (amt * 1) + (gstAmt * 1)
     return (
         <div> 
         <div className='checkout-heading container text-center fs-3 my-5 pt-5' >
@@ -40,36 +57,52 @@ function Checkout() {
     <p class="text-gray-800 font-medium">Customer information</p>
     <div class="">
       <label class="block text-sm text-gray-00" for="cus_name">Name</label>
-      <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required={true} placeholder="Your Name" aria-label="Name" />
+      <input onChange={(e) => {
+        formdata.name=e.target.value
+      }} class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required={true} placeholder="Your Name" aria-label="Name" />
     </div>
     <div class="mt-2">
       <label class="block text-sm text-gray-600" for="cus_email">Email</label>
-      <input class="w-full px-5  py-1 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text"required={true} placeholder="Your Email" aria-label="Email" />
+      <input onChange={(e) => {
+        formdata.email=e.target.value
+      }} class="w-full px-5  py-1 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text"required={true} placeholder="Your Email" aria-label="Email" />
     </div>
     <div class="mt-2">
       <label class="block text-sm text-gray-600" for="cus_email">Number</label>
-      <input class="w-full px-5  py-1 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="number" maxLength={10} minLength={10} required={true} placeholder="Your Email" aria-label="Email" />
+      <input onChange={(e) => {
+        formdata.phone=e.target.value
+      }} class="w-full px-5  py-1 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="number" maxLength={10} minLength={10} required={true} placeholder="Your Email" aria-label="Email" />
     </div>
     <div class="mt-2">
       <label class=" block text-sm text-gray-600" for="cus_email">Address</label>
-      <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required={true} placeholder="Street" aria-label="Email" />
+      <input onChange={(e) => {
+        formdata.address=e.target.value
+      }} class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required={true} placeholder="Street" aria-label="Email" />
     </div>
     <div class="mt-2">
       <label class="hidden text-sm block text-gray-600" for="cus_email">City</label>
-      <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required={true} placeholder="City" aria-label="Email"/>
+      <input onChange={(e) => {
+        formdata.city=e.target.value
+      }} class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required={true} placeholder="City" aria-label="Email"/>
     </div>
     <div class="inline-block mt-2 w-1/2 pr-1">
       <label class="hidden block text-sm text-gray-600" for="cus_email">Country</label>
-      <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required={true} placeholder="Country" aria-label="Email" />
+      <input onChange={(e) => {
+        formdata.country=e.target.value
+      }} class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required={true} placeholder="Country" aria-label="Email" />
     </div>
     <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
       <label class="hidden block text-sm text-gray-600" for="cus_email">Zip</label>
-      <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="cus_email" type="text" required={true} placeholder="Zip" aria-label="Email" />
+      <input onChange={(e) => {
+        formdata.zip=e.target.value
+      }} class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="cus_email" type="text" required={true} placeholder="Zip" aria-label="Email" />
     </div>
    
     <div class="mt-2">
       <label class="block text-sm text-gray-600" for="cus_email">Other Instructions</label>
-      <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Enter text ...." aria-label="Email" />
+      <input onChange={(e) => {
+        formdata.other=e.target.value
+      }} class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Enter text ...." aria-label="Email" />
     </div>
  
   </form>
@@ -96,17 +129,20 @@ function Checkout() {
   <tbody>
     <tr>
       <td className=''>Subtotal</td>
-      <td className=''>₹  130</td>
+      
+
+      <td  className=''>₹  {amt}</td>
+      
     
     </tr>
     <tr>
       <td className=''>GST</td>
-      <td className=''>₹ 12.11</td>
+      <td className=''>₹ {gstAmt}</td>
     
     </tr>
     <tr>
       <td className=''>To Pay</td>
-      <td className=''>₹ 142.11</td>
+      <td className=''>₹ {total}</td>
     </tr>
   </tbody>
 </table>

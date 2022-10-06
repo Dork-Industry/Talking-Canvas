@@ -82,15 +82,26 @@ function Oil() {
   ];
   const[size , setSize] = useState([]);
   const[character , setCharacter] = useState([]);
-    useEffect(() => {
-      setSize(sizes);
-      window.scrollTo(0, 0)
-    }, []);
-  
-    const handleSize = (id) => {
-      const dt = characters.filter(x => x.sizeId === id);
-      setCharacter(dt);
-    }
+  const[framesize, setFrameSize] = useState();
+  const [framechar,setFrameChar] = useState([]);
+  useEffect(() => {
+    setSize(sizes);
+    window.scrollTo(0, 0)
+  }, []);
+
+  const handleSize = (id) => {
+    
+    const dt = characters.filter(x => x.sizeId === id);
+    setCharacter(dt);
+    const sz = sizes.filter(x=> x.id === id)
+    sz.map((item) => setFrameSize(item.name));
+  } 
+  const handleChar = (id) => {
+    
+    const dt = characters.filter(x => x.id === id);
+    character.map((item) => setFrameChar(item.name));
+  } 
+  const [file,setFile] = useState(null)
     const slider = [
         {
             "id" : 1,
@@ -256,7 +267,7 @@ const faq = [
       
         <div><p>Select No of Character<span className='inches'>(s)</span> : </p></div>
         <div >
-        <select className='form-control form-control--character' >
+        <select className='form-control form-control--character' onChange={(e) => handleChar(e.target.value)} >
     <option value="0" > Click here to select the Character </option>
     {
         character &&
@@ -273,9 +284,9 @@ const faq = [
  
             </div>
             <div className='poduct-input '> <input  className='border border-secondary 
-             py-2 w-4/5 rounded-pill px-3 bg-orange-100  text-center'  type="file" name="myfile" /> <br/></div>
+             py-2 w-4/5 rounded-pill px-3 bg-orange-100  text-center' onChange={(e) => setFile(e.target.files[0])}   type="file" name="myfile" /> <br/></div>
            
-            <Link to="/checkout" class="button button-pulse"><i class='bx bx-purchase-tag px-2' ></i>Order Now</Link>
+            <Link to="/checkout"  state={{size: framesize, char: framechar, data:file}} class="button button-pulse"><i class='bx bx-purchase-tag px-2' ></i>Order Now</Link>
             <button className='button button-pulse'><i class='bx bx-cart px-2'></i>Add To cart</button>
             
         </form>
