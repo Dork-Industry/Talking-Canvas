@@ -23,11 +23,15 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import "../Home/styles.css";
-
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToBasket,
+} from "../../reducers/CartSlice";
 
 // import required modules
 import { FreeMode ,Pagination } from "swiper";
 function Charcoal() {
+  const { category, medium } = useSelector((state) => ({ ...state }));
   const [val , setVal] = useState("");
   const [open, setOpen] = useState("custom-model-main")
   const handleClick = (e) => {
@@ -166,6 +170,13 @@ const faq = [
       "answer" : "Charcoal Drawings are the best in black and white, and Oil Paintings are the best in color.If you are looking for a pocket-friendly option, then Charcoal makes sense, but if you want a fantastic piece of art, then you should go with Oil Painting."
   }
 ];
+const id = Math.floor(Math.round() * 1000)
+const dispatch = useDispatch();
+  const addItemsToBasket = () => {
+    dispatch(addToBasket({id,category,medium,framesize,framechar,file,fileName}));
+
+  };
+const [fileName,setFileName] = useState([])
     return (
         <div>
         <div className='pro-heading mt-5 text-center'>
@@ -267,14 +278,16 @@ const faq = [
       }
       </select>
       </div>
- 
             </div>
             <div className='poduct-input '> <input  className='border border-secondary 
-             py-2 w-4/5 rounded-pill px-3 bg-orange-100  text-center'  onChange={(e) => setFile(e.target.files[0])} type="file" name="myfile" /> <br/></div>
+             py-2 w-4/5 rounded-pill px-3 bg-orange-100  text-center'  onChange={(e) => {
+              setFile(URL.createObjectURL(e.target.files[0]))
+              setFileName(e.target.files[0])
+             }} type="file" name="myfile" /> <br/></div>
            
-            <Link to="/checkout" state={{size: framesize, char: framechar, data:file}} class="button button-pulse"><i class='bx bx-purchase-tag px-2' ></i>Order Now</Link>
-            <button className='button button-pulse'><i class='bx bx-cart px-2'></i>Add To cart</button>
-            
+            <Link to="/checkout" state={{size: framesize, char: framechar, data:file,dataName:fileName}} class="button button-pulse"><i class='bx bx-purchase-tag px-2' ></i>Order Now</Link>
+            <Link to="/Cart" onClick={addItemsToBasket}><button className='button button-pulse'><i class='bx bx-cart px-2'></i>Add To cart</button></Link>
+             
         </form>
                     </div>
                 </div>

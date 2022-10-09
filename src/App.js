@@ -64,31 +64,15 @@ import Charcoalpricing from './components/Pricing/Charcoalpricing';
 import Coloredpensilpricing from './components/Pricing/Coloredpensilpricing';
 import Acrylicpricing from './components/Pricing/Acrylicpricing';
 import Pastelpricing from './components/Pricing/Pastelpricing';
-import {client} from "./sanity"
 
 function App() {
-  const [state, setstate] = useState([])
-  const getData = async() => {
-    const query = `*[_type=="offer"]{
-      _id,
-      percent,
-      desc,
-      redirect,
-      image,
-    }`;
-    const posts = await client.fetch(query);
-    setstate(posts)
-  }
-    useEffect(() => {
-      getData();        
-    },[])
   return ( 
     <>
     <BrowserRouter>
     <Navbar/>
     <Whatsapp/>
     <Routes>
-      <Route path = "/" element={[<Hero />,<Testimonial/>,<Social />,<Category />,<Gift/>,<Gallery/>,<Work/>,<Video/>,<Blog/>,<Offer state={state}/>, <DetailedTestimonial/> ]}>
+      <Route path = "/" element={[<Hero />,<Testimonial/>,<Social />,<Category />,<Gift/>,<Gallery/>,<Work/>,<Video/>,<Blog/>,<Offer/>, <DetailedTestimonial/> ]}>
         <Route index element ={<Baby/>} />
           <Route path="baby" element={<Baby/>}/>
           <Route path='compilation' element={<Compilation/>}/>
@@ -139,7 +123,7 @@ function App() {
       <Route path="/pricing/coloredpencil-pricing" element={<Coloredpensilpricing/>}/>
       <Route path="/pricing/acrylic-pricing" element={<Acrylicpricing/>}/>
       <Route path="/pricing/pastel-pricing" element={<Pastelpricing/>}/>
-      <Route path = "/*" element={[<Hero />,<Testimonial/>,<Social />,<Category />,<Gift/>,<Gallery/>,<Work/>,<Video/>,<Blog/>,<Offer state={state}/>, <DetailedTestimonial/> ]}>
+      <Route path = "/*" element={[<Hero />,<Testimonial/>,<Social />,<Category />,<Gift/>,<Gallery/>,<Work/>,<Video/>,<Blog/>,<Offer/>, <DetailedTestimonial/> ]}>
         <Route index element ={<Baby/>} />
           <Route path="baby" element={<Baby/>}/>
           <Route path='compilation' element={<Compilation/>}/>

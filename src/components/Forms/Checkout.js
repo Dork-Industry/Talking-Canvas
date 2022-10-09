@@ -6,7 +6,7 @@ import { client } from "../../sanity"
 function Checkout() {
   const { category, medium } = useSelector((state) => ({ ...state }));
   const location = useLocation();
-  const { size, char, data } = location.state
+  const { size, char, data,dataName } = location.state
   const [price, setPrice] = useState([])
   const [formdata, setFormData] = useState({ name: "", email: "", phone: "", address: "", city: "", country: "", zip: "", other: "" })
   const getData = async () => {
@@ -34,7 +34,6 @@ function Checkout() {
     getCoupon();
     window.scrollTo(0, 0)
   }, []);
-
   const handlecoupon = (e) => {
     e.preventDefault();
     const finding = coupon.find(item => (
@@ -57,16 +56,18 @@ function Checkout() {
   const [offer, setOffer] = useState(0)
   const gstAmt = amt * 0.18;
   const total = Math.ceil((amt * 1) + (gstAmt * 1) - (offer))
+  const [terms,setTerms] = useState(false)
+  const toggleTick = () => {
+      if(terms) setTerms(false)
+      else setTerms(true)
+  }
   return (
     <div>
       <div className='checkout-heading container text-center fs-3 my-5 pt-5' >
         <h1>Payment <span className='text-muted '> &gt; Order Confirmation</span></h1>
       </div>
-
-
       <form>
         <div className='checkout-container container'>
-
           <div id="coupon">
             <div className='coupon px-4 py-3'>
               <p className='text-left mb-4'>If you have a coupon code, please apply it below</p>
@@ -87,9 +88,7 @@ function Checkout() {
                     <button onClick={handlecoupon} className=" px-4 py-2 text-white font-light tracking-wider bg-orange-500 rounded" type="submit">Apply Coupon</button>
                   </div>
                 </div>
-
               </div>
-
             </div>
           </div>
           <div id="user-detail">
@@ -138,14 +137,12 @@ function Checkout() {
                     formdata.zip = e.target.value
                   }} class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required={true} placeholder="Zip" aria-label="Email" />
                 </div>
-
                 <div class="mt-2">
                   <label class="block text-sm text-gray-600" for="cus_email">Other Instructions</label>
                   <input onChange={(e) => {
                     formdata.other = e.target.value
                   }} class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Enter text ...." aria-label="Email" />
                 </div>
-
               </form>
             </div>
           </div>
@@ -158,7 +155,7 @@ function Checkout() {
               <p className=' mb-2'>Painting Theme : <span className='text-muted'>{category}</span></p>
               <p className=' mb-2'>Size: <span className='text-muted'>{size}</span></p>
               <p className=' mb-2'>No of Characters: <span className='text-muted'>{char}</span></p>
-              <p className=' mb-2'>File Uploaded: <span className='text-muted'>{data.name}</span></p>
+              <p className=' mb-2'>File Uploaded: <span className='text-muted'>{dataName.name}</span></p>
               <hr />
               <div className=''>
                 <table class="table-auto">
@@ -170,16 +167,11 @@ function Checkout() {
                   <tbody>
                     <tr>
                       <td className=''>Subtotal</td>
-
-
                       <td className=''>₹  {amt}</td>
-
-
                     </tr>
                     <tr>
                       <td className=''>GST</td>
                       <td className=''>₹ {gstAmt}</td>
-
                     </tr>
                     <tr>
                       <td className=''>To Pay</td>
@@ -187,17 +179,15 @@ function Checkout() {
                     </tr>
                   </tbody>
                 </table>
-                <div className='d-flex mt-5'><input className='mx-5' type="checkbox" id="tick" />
+                <div className='d-flex mt-5'><input onChange={toggleTick} className='mx-5' type="checkbox" id="tick" />
                   <label for="tick"> I have read and agree to the website terms and conditions * </label></div>
                 <br></br>
                 <div class="mt-4 text-center">
                   <button class="px-4 py-2 text-white font-light tracking-wider bg-orange-500  rounded" type="submit">Order Now</button>
                 </div>
               </div>
-
             </div>
           </div>
-
         </div>
       </form>
     </div>

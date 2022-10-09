@@ -21,7 +21,7 @@ setSelected(true);
 }
 const [data, setData] = useState([])
   const getData = async() => {
-    const query = `*[_type=="Category"]{
+    const query = `*[_type=="Category"] | order(title){
       _id,
       title,
       image,

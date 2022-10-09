@@ -20,7 +20,7 @@ function Main() {
     }
     const [data, setData] = useState([])
   const getData = async() => {
-    const query = `*[_type=="medium"]{
+    const query = `*[_type=="medium"] | order(title){
       _id,
       title,
       image,

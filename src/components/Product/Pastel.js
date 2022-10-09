@@ -23,11 +23,22 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import "../Home/styles.css";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToBasket,
+} from "../../reducers/CartSlice";
 
 
 // import required modules
 import { FreeMode ,Pagination } from "swiper";
 function Pastel() {
+  const id = Math.floor(Math.round() * 1000)
+  const dispatch = useDispatch();
+    const addItemsToBasket = () => {
+      dispatch(addToBasket({id,category,medium,framesize,framechar,file,fileName}));
+  
+    };
+  const [fileName,setFileName] = useState([])
   const [val , setVal] = useState("");
   const [open, setOpen] = useState("custom-model-main")
   const handleClick = (e) => {
@@ -143,7 +154,7 @@ function Pastel() {
   const increase = () => {
     setState(state + 1);
   };
-  
+  const { category, medium } = useSelector((state) => ({ ...state }));
 const faq = [
   {
       "id": 1 ,
@@ -279,9 +290,9 @@ const faq = [
             <div className='poduct-input '> <input  className='border border-secondary 
              py-2 w-4/5 rounded-pill px-3 bg-orange-100  text-center' onChange={(e) => setFile(e.target.files[0])}   type="file" name="myfile" /> <br/></div>
            
-            <Link to="/checkout"  state={{size: framesize, char: framechar, data:file}} class="button button-pulse"><i class='bx bx-purchase-tag px-2' ></i>Order Now</Link>
-            <button className='button button-pulse'><i class='bx bx-cart px-2'></i>Add To cart</button>
-            
+           <Link to="/checkout" state={{size: framesize, char: framechar, data:file,dataName:fileName}} class="button button-pulse"><i class='bx bx-purchase-tag px-2' ></i>Order Now</Link>
+            <Link to="/Cart" onClick={addItemsToBasket}><button className='button button-pulse'><i class='bx bx-cart px-2'></i>Add To cart</button></Link>
+             
         </form>
                     </div>
                 </div>
